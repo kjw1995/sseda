@@ -1,4 +1,4 @@
-package com.sseda.controller;
+package com.sseda.admincontroller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

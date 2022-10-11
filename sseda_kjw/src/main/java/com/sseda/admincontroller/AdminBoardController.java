@@ -1,4 +1,4 @@
-	package com.sseda.controller;
+	package com.sseda.admincontroller;
 
 import java.util.List;
 import java.util.Map;

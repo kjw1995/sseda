@@ -42,3 +42,4 @@ public class MypageRestController {
 		return new ResponseEntity<myListVO>(ms.myList(cre, id, cate),HttpStatus.OK);
 	}
 }
+

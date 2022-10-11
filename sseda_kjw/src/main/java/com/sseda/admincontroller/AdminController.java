@@ -1,4 +1,4 @@
-package com.sseda.controller;
+package com.sseda.admincontroller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
