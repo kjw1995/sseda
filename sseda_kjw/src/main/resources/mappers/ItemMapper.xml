@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+						"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+						
+						
+<mapper namespace="com.sseda.mapper.ItemMapper">
+	<delete id="myitemdel" parameterType="java.util.Arrays">
+		<foreach collection="array" item="ino" open="DECLARE BEGIN" separator=";" close="; END;">
+				DELETE FROM matching WHERE item_seqno = #{ino};
+				DELETE FROM itemfile WHERE item_seqno = #{ino};
+		 		DELETE FROM item WHERE item_seqno = #{ino} 		
+		</foreach>
+	</delete>
+</mapper>

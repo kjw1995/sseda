@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+    
+    
+<!-- 인터페이스 이름(com.khs.mapper.MemberMap)과 xml의 namespace 속성값이 일치해야함-->
+<mapper namespace="com.sseda.mapper.ReplyMapper">
+	<!-- 댓글등록 -->
+	<insert id="insert">
+		INSERT INTO reply(reply_seqno,content,id,board_seqno) 
+		VALUES (reply_seqno.nextval,#{content},#{id},#{board_no})
+	</insert>
+	<!-- 댓글리스트 -->
+	<select id="list" resultType="com.sseda.dto.Reply">
+	<![CDATA[ 
+		SELECT * FROM
+			(SElECT rownum rn,reply_seqno no,content,TO_CHAR(wdate,'yyyy-mm-dd')wdate,id,(SELECT name FROM member m WHERE m.id = r.id) name
+			FROM reply r
+			WHERE board_seqno =#{no} AND rownum <= #{c.cpage}*#{c.row})
+		WHERE rn > (#{c.cpage}-1)*#{c.row}
+	]]>
+	</select>
+	<!-- 댓글리스트 총 레코드 -->
+	<select id="total" resultType="int">
+		SELECT count(*) FROM reply  WHERE board_seqno =#{c}
+	</select>
+	<!-- 댓글 디테일 -->
+	<select id="detail" resultType="com.sseda.dto.Reply">
+		SELECT reply_seqno no,content,TO_CHAR(wdate,'yyyy-mm-dd')wdate,id,(SELECT name FROM member m WHERE m.id = r.id) name
+		FROM reply r WHERE reply_seqno = #{no}
+	</select>
+	
+	<update id="update">
+		UPDATE reply SET content = #{content} WHERE reply_seqno = #{no}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM reply WHERE reply_seqno = #{no}
+	</delete>
+</mapper>
