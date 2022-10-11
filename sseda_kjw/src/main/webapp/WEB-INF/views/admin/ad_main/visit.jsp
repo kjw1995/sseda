@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<link rel="stylesheet" href="/sseda/ad_css/manager.css">
+<link rel="stylesheet" href="../ad_css/manager.css">
 
 <center>
 <h2>방문자 현황</h2>

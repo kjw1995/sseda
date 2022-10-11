@@ -4,10 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/ad_main/m_menu.jsp" %>
+<%@ include file="m_menu.jsp" %>
 </head>
 <body>
-<%@ include file="/ad_main/visit.jsp" %>
+<%@ include file="visit.jsp" %>
 <center><h2>회원 가입 현황</h2> </center>
  <div class="graph-wrapper">
     <div class="percent-indicator">
@@ -60,7 +60,7 @@
 				<td>조회수</td>
 			</tr>
 	</table>  
-  		<button onclick="location.href='/adbo/boardlist'">상세 보기</button>
+  		<button onclick="location.href='/ad_board/boardList'">상세 보기</button>
 			
 	<h2>최근 아이템</h2>
 		  <table class="newreply">

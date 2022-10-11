@@ -3,8 +3,8 @@
 	
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, inital-scale=1.0">
-<link rel="stylesheet" href="/admin/css/manager.css">	
-<link rel="stylesheet" href="/admin/css/menu.css">	
+<link rel="stylesheet" href="../ad_css/manager.css">	
+<link rel="stylesheet" href="../ad_css/menu.css">	
 <div class="mainmenu">
 	<center>
 	 	<a href="/admin/m_main.jsp">
@@ -15,9 +15,9 @@
 	<div id="menu">
 		<ul class="snip1217">
 		  <li class="current"><a href="/ad_main/m_main.jsp">메인</a></li>
-		  <li><a href="/admem/memberList">회원 관리</a></li>
-		  <li><a href="/adbo/boardList">게시물 * 댓글 관리</a></li>
-		  <li><a href="/adit/itemlist">아이템 관리</a></li>
+		  <li><a href="/admin/memberList">회원 관리</a></li>
+		  <li><a href="/admin/boardList">게시물 * 댓글 관리</a></li>
+		  <li><a href="/admin/itemList">아이템 관리</a></li>
 		  <li><a href="/adqa/qnalist">고객센터 관리</a></li>
 		  <li><a href="/adme/menulist">메뉴 관리</a></li>
 		  <li><a href="/adca/categorylist">카테고리 관리</a></li>

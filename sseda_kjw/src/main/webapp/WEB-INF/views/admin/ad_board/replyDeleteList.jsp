@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/ad_main/m_menu.jsp" %>
+<%@ include file="../ad_main/m_menu.jsp" %>
 </head>
 <body>
 <center>	
 <h2>댓글 수정 삭제</h2>
 <hr>
-<%@ include file="/ad_board/Sboard.jsp" %>
+<%@ include file="../ad_board/Sboard.jsp" %>
 
 		<table>
 		<tr>

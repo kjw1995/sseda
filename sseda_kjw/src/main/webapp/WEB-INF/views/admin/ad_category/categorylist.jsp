@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/ad_main/m_menu.jsp" %> 
+<%@ include file="../ad_main/m_menu.jsp" %> 
 </head>
 <body>
 <center>	
 <h2>카테고리</h2>
 <hr>
-<%@ include file="/ad_category/Mcategory.jsp" %>
+<%@ include file="../ad_category/Mcategory.jsp" %>
 <hr>
 <div class="container">
 	<form action="/sseda/ad_category/category_ins" method="post">
