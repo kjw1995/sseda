@@ -6,9 +6,7 @@
 <script src="/js/menu.js"></script>
 <div>
 <header id="header-1" class="header">
-<!-- <h1 class="flag"><a href="/">SSEDA.</a></h1> -->   
-<a href="/" class="link-1"> <img src="/img/logo4.png" style="height: 65px;" "width : 65px;"></a>
-<!--  <img src="/sseda/img/icon.png" class ="headicon">-->
+<a href="/" class="link-1"> <img src="/img/logo.png" class ="headicon"></a>
   <nav class="header-nav">
     <div class="search-button">
       <a href="#" class="search-toggle" data-selector="#header-1"></a>
