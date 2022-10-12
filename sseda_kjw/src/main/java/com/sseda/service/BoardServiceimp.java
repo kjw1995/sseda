@@ -44,8 +44,8 @@ public class BoardServiceimp implements BoardService {
 	public void report(String no) {
 		dao.report(no);
 	}
-	public int getT() {
-		return dao.getT();
+	public int getT(Cre c) {
+		return dao.getT(c);
 	}
 
 }

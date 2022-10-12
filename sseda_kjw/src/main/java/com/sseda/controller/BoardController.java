@@ -44,7 +44,7 @@ public class BoardController extends HttpServlet {
 		if(c.getRow()==0) c.setRow(6);
 		
 		m.addAttribute("board", b.board(c));
-		m.addAttribute("page", new Page(b.getT(),c));
+		m.addAttribute("page", new Page(b.getT(c),c));
 		
 		return "/board/board";
 	}

@@ -13,5 +13,5 @@ public interface BoardDao {
 	public void reg(Board b);
 	public void del(String no);
 	public void report(String no);
-	public int getT();
+	public int getT(Cre c);
 }

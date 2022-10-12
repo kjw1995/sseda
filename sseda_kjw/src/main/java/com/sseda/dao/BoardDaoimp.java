@@ -191,16 +191,20 @@ public class BoardDaoimp implements BoardDao {
 		}
 		
 	}
-	public int getT() {
-		String sql="CALL p_boardtotal(?)";
+	public int getT(Cre c) {
+		String sql="CALL p_boardtotal(?,?,?)";
+		System.out.println("카테고리 :"+c.getCate());
+		System.out.println("키워드 :"+c.getKey());
 		int s = 0;
 		try {
 			Connection conn = dbconn.getConnection();
 			CallableStatement stmt = conn.prepareCall(sql);
-			stmt.registerOutParameter(1, OracleTypes.INTEGER);
+			stmt.setString(1, c.getCate());
+			stmt.setString(2, c.getKey());
+			stmt.registerOutParameter(3, OracleTypes.INTEGER);
 			stmt.executeQuery();
-			s = stmt.getInt(1);
-			
+			s = stmt.getInt(3);
+			System.out.println("레코드 수 : "+s);
 			stmt.close();
 			conn.close();
 		} catch (SQLException e) {

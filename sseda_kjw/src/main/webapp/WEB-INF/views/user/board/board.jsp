@@ -26,7 +26,8 @@
 		</c:if>
 	    	<a href="javascript:check('${id }',2)" class="button btnPush btnPurple" style="top: 36%; left: 93%">글등록</a>
 	  	</div>
-  	<form action="/board/list">
+	<center>
+  	<form action="/board/list" id="keyword">
   		<select name="cate">
   			<option value=""
   			<c:if test="${page.c.cate eq '' }">selected</c:if>>전체</option>
@@ -40,6 +41,7 @@
 		<input type="text" name="key" value="${page.c.key }">
 		<input type="submit" value="검색">
   	</form>
+  	</center>
 	<div style="margin-left:5%">
 		<h1>이주의 키워드 :${board.k.keyword }</h1>
 	</div>
@@ -58,6 +60,7 @@
 			</c:forEach>	
 		</table>
 	</div>
+	<p>총레코드 수 : ${page.t}
 	<div class="pagination">
 	    <c:if test="${page.prev }">
 			<a href="/board/list?cpage=${page.start -1 }&row=${page.c.row}&cate=${page.c.cate}&key=${page.c.key}">&laquo;</a>
