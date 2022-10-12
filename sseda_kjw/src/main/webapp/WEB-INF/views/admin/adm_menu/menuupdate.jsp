@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/ad_main/m_menu.jsp" %> 
+<%@ include file="../ad_main/m_menu.jsp" %> 
 </head>
 <body>
 <center>	
 <h2>메뉴 수정</h2>
 <hr>
-<%@ include file="/adm_menu/adm_Mmenu.jsp" %>
+<%@ include file="../adm_menu/adm_Mmenu.jsp" %>
 <hr>
 <div class="container">
 	<form action="/admin/menu_update" method="post">

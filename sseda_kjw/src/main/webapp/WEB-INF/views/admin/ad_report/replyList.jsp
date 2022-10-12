@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/ad_main/m_menu.jsp" %>
+<%@ include file="../ad_main/m_menu.jsp" %>
 </head>
 <body>
 <center>	
 <h2>신고 댓글 관리</h2>
-<%@ include file="/ad_report/Sreport.jsp" %>
+<%@ include file="../ad_report/Sreport.jsp" %>
 <hr>
-<%@ include file="/ad_report/Sreply.jsp" %>
+<%@ include file="../ad_report/Sreply.jsp" %>
 <br>
 <table>
 	<tr>

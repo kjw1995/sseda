@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/ad_main/m_menu.jsp" %>
+<%@ include file="../ad_main/m_menu.jsp" %>
 <link rel="stylesheet" href="/ad_css/Mmanagercss.css"> 
 </head>
 <body>
 <center>	
 <h2>신고 게시글 관리</h2>
-<%@ include file="/ad_report/Sreport.jsp" %>
+<%@ include file="../ad_report/Sreport.jsp" %>
 <hr>
 	<div class="memwrap">
 	<form method="post" action="#">

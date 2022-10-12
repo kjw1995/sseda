@@ -7,7 +7,7 @@
 
 <body>
 <center>
-<%@ include file="/ad_main/m_menu.jsp" %>
+<%@ include file="../ad_main/m_menu.jsp" %>
 <h2> 멘토 * 멘티 질문 글 </h2>
 	<ul class="memmenu">
 			<li class="mem"><a href="/adqa/mentor">멘토＊멘티 Q&A</a></li>
@@ -17,7 +17,7 @@
 			<li><a href="/qaad/event">이벤트 Q&A</a></li>
 		</ul>
 	<hr>
-	<%@ include file="/ad_service/Mservice.jsp" %>
+	<%@ include file="../ad_service/Mservice.jsp" %>
 		<br>
 			<table>
 				<tr>

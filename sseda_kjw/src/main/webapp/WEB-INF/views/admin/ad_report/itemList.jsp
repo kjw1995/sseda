@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/ad_main/m_menu.jsp" %>
+<%@ include file="../ad_main/m_menu.jsp" %>
 <link rel="stylesheet" href="/sseda/ad_css/Mmanagercss.css">
 </head>
 <body>

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/ad_main/m_menu.jsp" %>
+<%@ include file="../ad_main/m_menu.jsp" %>
 </head>
 
 
@@ -17,7 +17,7 @@
 			<li><a href="/admem/memberDeleteList">회원 탈퇴 목록</a></li>
 		</ul>
 	<hr>
-<%@ include file="/ad_member/MmemDelete.jsp" %>
+<%@ include file="../ad_member/MmemDelete.jsp" %>
 
 	<table>
 		<tr>

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/ad_css/manager.css">
 </head>
 <body>
-<%@ include file="/ad_main/m_menu.jsp" %>
+<%@ include file="../ad_main/m_menu.jsp" %>
 	<center>	
 		<h2>회원 관리</h2>
 		<ul class="memmenu">
@@ -17,7 +17,7 @@
 			<li><a href="/admem/memberDeleteList">회원 탈퇴 목록</a></li>
 		</ul>
 		<hr>
-		<%@ include file="/ad_member/Mmanager.jsp" %>
+		<%@ include file="../ad_member/Mmanager.jsp" %>
 		<br>
 			<table>
 				<tr>

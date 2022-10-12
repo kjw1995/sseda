@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/ad_main/m_menu.jsp" %>
+<%@ include file="../ad_main/m_menu.jsp" %>
 </head>
 <body>
 <center>
@@ -16,7 +16,7 @@
 			<li><a href="/qaad/event">이벤트 Q&A</a></li>
 		</ul>
 	<hr>
-	<%@ include file="/ad_service/Mservice.jsp" %>
+	<%@ include file="../ad_service/Mservice.jsp" %>
 	<br>
 			<table>
 				<tr>
