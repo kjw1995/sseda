@@ -33,7 +33,7 @@ public class AdminController {
 		log.info("admin home...........");
 		return "/ad_main/m_login";
 	}
-	@RequestMapping(value="/login", method=RequestMethod.POST)
+	@PostMapping(value="/login")
 	public String login(Member mem, HttpSession sess) {
 		log.info("admin login................");
 		String map = ad.login(mem.getId(), mem.getPw());
