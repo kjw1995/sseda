@@ -24,7 +24,7 @@ public class BoardServiceimp implements BoardService {
 	
 	public String insert(Board b,MultipartFile file) {
 		Files f = new Files();
-		if(file != null) {
+		if(file.getSize() != 0) {
 			f = fs.fileupload(file);
 		}
 		return dao.insert(b,f);
