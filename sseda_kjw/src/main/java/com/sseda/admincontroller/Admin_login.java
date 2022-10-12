@@ -21,7 +21,7 @@ public class Admin_login {
 	@Autowired
 	AdminService ad;
 	
-	@RequestMapping(value="/login", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/login", method=RequestMethod.POST)
 	public String login(Member mem, HttpSession sess) {
 		
 		String map = ad.login(mem.getId(), mem.getPw());
