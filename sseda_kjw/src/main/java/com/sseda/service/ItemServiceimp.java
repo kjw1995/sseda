@@ -3,7 +3,6 @@ package com.sseda.service;
 
 import java.util.List;
 
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.fileupload.FileItem;
@@ -14,8 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.sseda.dao.ItemDao;
 import com.sseda.dto.Cre;
 import com.sseda.dto.Item;
-
-import com.sseda.mapper.ItemMapper;
 import com.sseda.dto.Files;
 
 @Service
@@ -25,8 +22,6 @@ public class ItemServiceimp implements ItemService {
 	ItemDao dao;
 	@Autowired
 	FileService f;
-	@Autowired 
-	ItemMapper im;
 	
 	@Override
 	public List<Item> list(Cre c) {
@@ -50,7 +45,7 @@ public class ItemServiceimp implements ItemService {
 	@Override
 	public String insert(Item item,MultipartFile file) {
 		Files fi = new Files();
-		if(file != null) {
+		if(file.getSize() != 0) {
 			fi = f.fileupload(file);
 		}
 		return dao.insert(item,fi);
@@ -62,11 +57,6 @@ public class ItemServiceimp implements ItemService {
 	@Override
 	public int getT(Cre c) {
 		return dao.getT(c);
-	}
-	@Override
-	public int myitemdel(String[] ino) {
-		
-		return im.myitemdel(ino);
 	}
 
 }

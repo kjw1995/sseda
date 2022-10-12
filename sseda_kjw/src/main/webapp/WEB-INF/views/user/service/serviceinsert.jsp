@@ -23,7 +23,7 @@
 				<option value="P">결제/환불 관련</option>
 			</select>
 			<input type="text" placeholder="제목" name="title"><br>
-			<!-- <input type="file" value="첨부파일" name="file"> -->
+			<input type="file" value="첨부파일" name="fileup">
 			<input type="hidden" value="${sess_id }" name="id">
 			<textarea placeholder="내용" name="content"></textarea>
 			<input type="submit" value="등록하기">

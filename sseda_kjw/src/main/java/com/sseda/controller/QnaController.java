@@ -39,9 +39,9 @@ public class QnaController {
 		return "/service/serviceinsert";
 	}
 	@PostMapping("insert")
-	public String insert(Question question,@ModelAttribute("file")MultipartFile file,RedirectAttributes rd) {
+	public String insert(Question question,MultipartFile fileup,RedirectAttributes rd) {
 		log.info("insert................");
-		String no = q.insert(question, file);
+		String no = q.insert(question, fileup);
 		rd.addFlashAttribute("no",no);
 		return "redirect:/qna/question";
 	}

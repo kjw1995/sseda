@@ -35,7 +35,7 @@ public class QnaServiceimp implements QnaService {
 	@Override
 	public String insert(Question q, MultipartFile file) {
 		Files fi = new Files();
-		if(file != null) {
+		if(file.getSize() != 0) {
 			fi = f.fileupload(file);
 		}
 		return dao.inset(q,fi);

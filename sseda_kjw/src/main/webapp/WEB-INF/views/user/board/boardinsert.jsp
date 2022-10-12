@@ -23,7 +23,7 @@
 				<input type="radio" name="open" value="Y">공개
 				<input type="radio" name="open" value="N">비공개
 			</fieldset>
-			<!-- <input type="file" style="width:10%" value="첨부파일"><br> -->
+			<input type="file" style="width:10%" value="첨부파일" name="fileup"><br>
 			<textarea name="content" id="content" placeholder="내용"></textarea><br>
 			<input type="submit" value="등록" >
 			<input type="submit" value="취소" >

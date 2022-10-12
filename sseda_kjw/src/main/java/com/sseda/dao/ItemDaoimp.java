@@ -45,6 +45,7 @@ public class ItemDaoimp implements ItemDao {
 				Item it = new Item();
 				it.setTitle(rs.getString("title"));
 				it.setName(rs.getString("name"));
+				it.setCfcheck(rs.getString("cfcheck"));
 				it.setSeqno(rs.getString("item_seqno"));
 				it.setCount(rs.getString("cnt"));
 				it.setWdate(rs.getString("wdate"));

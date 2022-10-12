@@ -88,7 +88,9 @@
 	<div id="list">
 	<c:forEach items="${item }" var="i" >
 		<table class="itemlist" border="1">
-			<tr><td colspan="2" style="height:150px;"onclick="location.href='/item/detail?no=${i.seqno}'"><div style="height:150px;"><img src="/img/logo.png" style="height:100%;width:100%;"></div></td>
+			<tr><td colspan="2" style="height:150px;"onclick="location.href='/item/detail?no=${i.seqno}'"><div style="height:150px;">
+			<c:if test="${i.cfcheck == 'O' }"><img src="/img/멘토.jpg" style="height:100%;width:100%;"></c:if>
+			<c:if test="${i.cfcheck == 'I' }"><img src="/img/멘티.jpg" style="height:100%;width:100%;"></c:if></div></td>
 			<tr><td>제목</td><td>${i.title }</td>
 			<tr><td>작성일자</td><td>${i.wdate }</td>
 			<tr><td>작성자</td><td>${i.name }</td>

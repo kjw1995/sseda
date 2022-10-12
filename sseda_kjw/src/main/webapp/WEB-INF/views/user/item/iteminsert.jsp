@@ -35,7 +35,7 @@
 				<input type="radio" name="open" value="Y">공개
 				<input type="radio" name="open" value="N">비공개
 			</fieldset><br>
-			<input type="file" style="width:10%" value="첨부파일" name="file">
+			<input type="file" style="width:10%" value="첨부파일" name="fileup">
 			<input type="number" min="0" max="10000000" name="price" placeholder="가격"><br>
 			<textarea name="content" id="content" placeholder="내용"></textarea><br>
 			<input type="submit" value="등록" >

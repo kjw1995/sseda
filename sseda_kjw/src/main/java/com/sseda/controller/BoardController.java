@@ -58,9 +58,9 @@ public class BoardController extends HttpServlet {
 		return "/board/boardinsert";
 	}
 	@PostMapping("insert")
-	public String insert(Board board,MultipartFile file,RedirectAttributes rd,HttpSession sess) {
+	public String insert(Board board,MultipartFile fileup,RedirectAttributes rd,HttpSession sess) {
 		board.setId((String)sess.getAttribute("sess_id"));
-		rd.addFlashAttribute("no",b.insert(board,file));
+		rd.addFlashAttribute("no",b.insert(board,fileup));
 		return "redirect:/board/detail";
 	}
 	@GetMapping("delete")
