@@ -32,7 +32,7 @@
             <i class="fas fa-sun"></i>
          </div>
          <div class="info">
-            <div class="main" ><h4 onclick="location.href='/mem/userinfoitem?id=${myid}&cate=item'">아이템</h4></div>
+            <div class="main" ><h4 onclick="location.href='/mem/detailmypage?id=${myid}&cate=item'">아이템</h4></div>
             <!-- <div class="sub">Omuke trughte a otufta</div> -->
          </div>
       </div>
@@ -44,7 +44,7 @@
             <i class="fas fa-sun"></i>
          </div>
          <div class="info">
-            <div class="main"><h4 onclick="location.href='/mem/userinfoitem?id=${myid}&cate=board'">게시글</h4></div>
+            <div class="main"><h4 onclick="location.href='/mem/detailmypage?id=${myid}&cate=board'">게시글</h4></div>
          </div>
       </div>
    </div>
@@ -55,7 +55,7 @@
             <i class="fas fa-sun"></i>
          </div>
          <div class="info">
-            <div class="main">댓글</div>
+            <div class="main"><h4 onclick="location.href='/mem/detailmypage?id=${myid}&cate=reply'">댓글</h4></div>
          </div>
       </div>
    </div>

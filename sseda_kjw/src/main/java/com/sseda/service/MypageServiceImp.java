@@ -16,11 +16,6 @@ public class MypageServiceImp implements MyPageService{
 	@Override
 	public myListVO myList(Cre cre, String id, String cate) {
 		
-		
-		
-		
-		
-		
 		return new myListVO(my.total(id, cate),
 				            my.mylist(cre, id, cate));
 	}

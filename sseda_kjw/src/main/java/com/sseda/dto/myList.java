@@ -6,6 +6,7 @@ public class myList {
 	
 	public List<Item> item;
 	public List<Board> board;
+	public List<Reply> reply;
 	
 	public List<Item> getItem() {
 		return item;
@@ -19,6 +20,13 @@ public class myList {
 	public void setBoard(List<Board> board) {
 		this.board = board;
 	}
+	public List<Reply> getReply() {
+		return reply;
+	}
+	public void setReply(List<Reply> reply) {
+		this.reply = reply;
+	}
+	
 	
 	
 	
