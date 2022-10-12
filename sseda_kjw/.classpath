@@ -48,11 +48,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-<<<<<<< HEAD
 	<classpathentry kind="lib" path="D:/ju_bak/sqldeveloper/jdbc/lib/ojdbc8.jar">
-=======
-	<classpathentry kind="lib" path="D:/JAVAkhs2/sqldeveloper/jdbc/lib/ojdbc8.jar">
->>>>>>> branch 'master' of https://github.com/kjw1995/sseda.git
 		<attributes>
 			<attribute name="module" value="true"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
