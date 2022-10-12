@@ -12,8 +12,10 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.sseda.dto.Board;
 import com.sseda.dto.Cre;
 import com.sseda.dto.Item;
+import com.sseda.dto.Reply;
 import com.sseda.dto.myList;
 
 import oracle.jdbc.OracleTypes;
@@ -32,21 +34,23 @@ public class MyPageDaoImp implements MyPageDao{
 		
 		myList list = new myList();
 		List<Item> itemList = new ArrayList<Item>();
+		List<Board> boardList = new ArrayList<Board>();
+		List<Reply> replyList = new ArrayList<Reply>();
 		
 		String sql = "call p_get_mylist(?,?,?,?,?)";
 	
 		try {
+			conn = dbconn.getConnection();
+			stmt = conn.prepareCall(sql);
+			stmt.setString(1, id);
+			stmt.setString(2, cate);
+			stmt.setInt(3, cre.getCpage());
+			stmt.setInt(4, cre.getRow());
+			stmt.registerOutParameter(5, OracleTypes.CURSOR);
+			stmt.executeQuery();
+			
+			ResultSet rs = (ResultSet)stmt.getObject(5);
 			if(cate.equals("item")) {
-				conn = dbconn.getConnection();
-				stmt = conn.prepareCall(sql);
-				stmt.setString(1, id);
-				stmt.setString(2, cate);
-				stmt.setInt(3, cre.getCpage());
-				stmt.setInt(4, cre.getRow());
-				stmt.registerOutParameter(5, OracleTypes.CURSOR);
-				stmt.executeQuery();
-				
-				ResultSet rs = (ResultSet)stmt.getObject(5);
 				
 				while(rs.next()) {
 					Item item = new Item();
@@ -74,8 +78,30 @@ public class MyPageDaoImp implements MyPageDao{
 					list.setItem(itemList);
 			}
 			
-			}
-			
+			} else if(cate.equals("board")) {
+				
+				while(rs.next()) {
+					Board board = new Board();
+					board.setNo(rs.getString("board_seqno"));
+					board.setTitle(rs.getString("title"));
+					board.setWdate(rs.getString("wdate"));
+					board.setCount(rs.getString("views"));
+					board.setKeyword(rs.getString("keyword"));
+					boardList.add(board);
+				}
+				list.setBoard(boardList);
+			} else if(cate.equals("reply")) {
+				
+				while(rs.next()) {
+					Reply reply = new Reply();
+					reply.setBoard_no(rs.getString("board_seqno"));
+					reply.setContent(rs.getString("content"));
+					reply.setWdate(rs.getString("wdate"));
+					reply.setBoard_title(rs.getString("title"));
+					replyList.add(reply);
+				}
+				list.setReply(replyList);
+			} 
 			
 		} catch(SQLException e) {
 			e.printStackTrace();

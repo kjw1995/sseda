@@ -99,7 +99,7 @@ public class MypageController {
 		return "/mypage/usercheck";
 	 }
     
-    @PostMapping("changeuser")
+    @GetMapping("changeuser")
     public String changeuser(@RequestParam("id") String id,
 							 Model model) {
     	
@@ -125,7 +125,7 @@ public class MypageController {
     	return "redirect:/";
     }
     
-    @GetMapping("userinfoitem")
+    @GetMapping("detailmypage")
     public String userinfoitem(@ModelAttribute("id") String id,
     		                   @RequestParam("cate") String cate,
     						   Model model) {
@@ -140,7 +140,7 @@ public class MypageController {
     	model.addAttribute("category",cate);
     	model.addAttribute("id", id);
     	
-    	return "/mypage/userinfo_item2";
+    	return "/mypage/mypage_detail";
     }
     
     @GetMapping("myitemdel")

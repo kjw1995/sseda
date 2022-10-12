@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/menu.css">
 <link rel="stylesheet" href="/css/footer.css">
-<link rel="stylesheet" href="/css/userinfoitem2.css">
+<link rel="stylesheet" href="/css/mypage_detail.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="/js/userinfoitem2.js"></script>
+<script src="/js/mypage_detail.js"></script>
 </head>
 <body>
 <input type="hidden" class="maincate" value="${category}">
@@ -31,20 +31,20 @@
           <span>Home</span>
         </a>
       </li>
-      <li class="sidebar-list-item active">
-        <a href="/memre/mypagelist/${id}/item/1">
+      <li class="sidebar-list-item item-li">
+        <a href="" id="a_item">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           <span>아이템</span>
         </a>
       </li>
-      <li class="sidebar-list-item">
-        <a href="/memre/mypagelist/${id}/board/1">
+      <li class="sidebar-list-item board-li">
+        <a href="" id="a_board">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           <span>게시글</span>
         </a>
       </li>
-      <li class="sidebar-list-item">
-        <a href="#">
+      <li class="sidebar-list-item reply-li">
+        <a href="" id="a_reply">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           <span>댓글</span>
         </a>
@@ -80,13 +80,15 @@
       </div>
       <div class="account-info-name">${id}</div>
       <button class="account-info-more">
-        <%-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg> --%>
+      	<a href="/mem/changeuser?id=${id}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+        </a>
       </button>
     </div>
   </div>
   <div class="app-content">
     <div class="app-content-header">
-      <h1 class="app-content-headerText">아이템</h1>
+      <h1 class="app-content-headerText"></h1>
       <button class="mode-switch" title="Switch Theme">
         <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
           <defs></defs>
@@ -270,10 +272,10 @@ $(".product-cell sales")
 $(".product-cell price")        
 $(".status active") */
 var id = $(".myid").val();
-var cate = $(".maincate").val();
+var cate = $(".maincate");
 var curPage = 1;
 
-varlist(id,cate,1);
+varlist(id,cate.val(),1);
 
 	function varlist(id,cate,currentPage) {
 		
@@ -283,21 +285,23 @@ varlist(id,cate,1);
 		
 		mypage.list({id:id, cate:cate, currentPage:currentPage}, function(data){
 			
-			/* 데이터 확인 */
+			/* 데이터 확인 
 			for(var i=0, len=data.mylist.item.length || 0; i < len; i++) {
 				console.log(data.mylist.item[i]);
-			}
+			} */
 			
-			/* 데이터가 없는경우 */
+			/* 데이터가 없는경우 
 			if(data.mylist.item == null || data.mylist.item.length == 0) {
 				console.log("데이터가 존재하지 않습니다.");
 				$(".products-row").html("데이터가 존재하지 않습니다.");
 				return;
-			}
+			} */
 			
 			
 			
 			/* 데이터가 있는경우 */
+			if(data.mylist.item != null) {
+				
 			if(cate == "item") {
 				var str = "";	
 				str += "<div class='products-header'>";
@@ -320,8 +324,8 @@ varlist(id,cate,1);
 					}
 						str += "<span class='datatitle'>";
 						str += data.mylist.item[i].title;
-						str += "</div>";
 						str += "</span>";
+						str += "</div>";
 						
 					
 						/* 카테고리 */
@@ -372,16 +376,107 @@ varlist(id,cate,1);
 				$(".tableView").html(str);
 				console.log("레코드수 = " + data.total);
 				varPage(data.total,curPage);
-			} else if(cate == "board") {
-				str += "<div class='products-header'>";
-			 	str += "<div class='cell-font category'>제목</div>";
-		        str += "<div class='cell-font status-cell'>작성일자</div>";
-		        str += "<div class='cell-font sales'>조회수</div>";
-		        str += "<div class='cell-font stock'>추천</div>";
-		        str += "</div>";
-		        
-		        
 			}
+		} else if(data.mylist.board != null) {
+			
+				if(cate == "board") {
+					var board = "";	
+					
+					board += "<div class='products-header'>";
+					board += "<div class='cell-font image'>제목</div>";
+					board += "<div class='cell-font category'>키워드</div>";
+					board += "<div class='cell-font sales'>조회수</div>";
+					board += "<div class='cell-font price'>작성일자</div>";
+					board += "</div>";
+					for(var i=0; i < data.mylist.board.length; i++) {
+						
+						/* 제목 */
+						board += "<div class='products-row'>";
+						board += "<div class='product-cell image'>";
+						board += "<img src='/img/mentee.jpg' alt='product'>";
+						board += "<span class='datatitle'>";
+						board += data.mylist.board[i].title;
+						board += "</span>";
+						board += "</div>";
+						
+						/* 키워드 */
+						board += "<div class='product-cell category'>";
+						board += "<span class='cell-label'>키워드:</span>";
+						board += data.mylist.board[i].keyword;
+						board += "</div>";
+						
+						/* 조회수 */
+						board += "<div class='product-cell sales'>";
+						board += "<span class='cell-label'>조회수:</span>";
+						board += data.mylist.board[i].count;
+						board += "</div>";
+						
+						/* 작성일자 */
+						board += "<div class='product-cell price'>";
+						board += "<span class='cell-label'>작성일자:</span>";
+						board += data.mylist.board[i].wdate;
+						board += "</div>";
+						board += "</div>";
+						
+					}
+				/* 리스트 버튼 */
+				board += "<div class='page-div'>";
+				board += "<div class='page-sondiv'>";
+				board += "</div>";
+				board += "</div>";
+								
+				$(".tableView").html(board);
+				console.log("레코드수 = " + data.total);
+				varPage(data.total,curPage);
+			}
+			
+		} else if(data.mylist.reply != null) {
+			if(cate == "reply") {
+				var reply = "";	
+			
+				reply += "<div class='products-header'>";
+				reply += "<div class='cell-font image'>게시글제목</div>";
+				reply += "<div class='cell-font category'>댓글내용</div>";
+				reply += "<div class='cell-font sales'>작성일자</div>";
+				reply += "</div>";
+				for(var i = 0; i < data.mylist.reply.length; i++) {
+					
+					/* 게시글제목 */
+					reply += "<div class='products-row'>";
+					reply += "<div class='product-cell image'>";
+					reply += "<img src='/img/mentee.jpg' alt='product'>";
+					reply += "<span class='datatitle'>";
+					reply += data.mylist.reply[i].board_title;
+					reply += "</span>";
+					reply += "</div>";
+					
+					/* 댓글내용 */
+					reply += "<div class='product-cell category'>";
+					reply += "<span class='cell-label'>댓글내용:</span>";
+					reply += data.mylist.reply[i].content;
+					reply += "</div>";
+					
+					/* 작성일자 */
+					reply += "<div class='product-cell sales'>";
+					reply += "<span class='cell-label'>조회수:</span>";
+					reply += data.mylist.reply[i].wdate;
+					reply += "</div>";
+					reply += "</div>";
+				}
+				
+				/* 리스트 버튼 */
+				reply += "<div class='page-div'>";
+				reply += "<div class='page-sondiv'>";
+				reply += "</div>";
+				reply += "</div>";
+								
+				$(".tableView").html(reply);
+				console.log("레코드수 = " + data.total);
+				varPage(data.total,curPage);
+				
+			}
+		}
+			
 			
 		});
 		
@@ -390,14 +485,13 @@ varlist(id,cate,1);
 		
 		/* 카테고리에 따른 페이지 출력 */
 		function varPage(varRecords) {
-			var btr = "";
+			var btn = "";
 			var endPage = Math.ceil(curPage/15.0)*Math.ceil(varRecords/15.0);
 			var startPage = endPage - (Math.ceil(varRecords/15.0)-1);
 			
 			var prev = curPage > 1;
 			var next = false;
 			
-			console.log("나누기 = " + varRecords/15);
 			console.log("curPage = " + curPage);
 			console.log("startPage = " + startPage);
 			console.log("prev = " + prev);
@@ -412,31 +506,82 @@ varlist(id,cate,1);
 			
 			/* 이전페이지 */
 			if(prev) {
-				btr += "<button class='mypage-btn' value='" + (curPage - 1) + "'>prev</button>";
+				btn += "<button class='mypage-btn' value='" + (curPage - 1) + "'>prev</button>";
 			}
 			
 			for(var i = startPage; i <= endPage; i++) {
-				btr += "<button class='mypage-btn' id ='btn-"+i+"' value='" + i + "'>" + i + "</button>";
+				btn += "<button class='mypage-btn' id ='btn-"+i+"' value='" + i + "'>" + i + "</button>";
 			}
 			
 			/* 다음페이지 */
 			if(next) {
-				btr += "<button class='mypage-btn' value='" + (endPage + 1) + "'>next</button>";
+				btn += "<button class='mypage-btn' value='" + (endPage + 1) + "'>next</button>";
 			}
 			
-			$(".page-sondiv").html(btr);
+			$(".page-sondiv").html(btn);
 	}
 	
 	/* 리스트 페이지 번호 클릭시 */
-	
 	$(document).on("click",".mypage-btn",function(){
 		console.log("페이지변환");
 		var clickPage = $(this).val();
 		console.log("curPage = " + clickPage + "(clickPage)");
 		curPage = clickPage;
-		varlist(id,cate,curPage); 
+		varlist(id,cate.val(),curPage); 
 	});
 
+	
+	/* 사이드바 클릭시 */
+	$("#a_item").on("click",function(e){
+		e.preventDefault();
+		cate.val("item");
+		$(".sidebar-list-item").removeClass("active");
+		$(".item-li").addClass("active");
+		$(".app-content-headerText").html("아이템");
+		varlist(id,"item",1);
+		console.log("item a")
+	});
+	
+	$("#a_board").on("click",function(e){
+		e.preventDefault();
+		cate.val("board");
+		$(".sidebar-list-item").removeClass("active");
+		$(".board-li").addClass("active");
+		$(".app-content-headerText").html("게시글");
+		varlist(id,"board",1);
+		console.log("board a");
+	});
+	
+	$("#a_reply").on("click",function(e){
+		e.preventDefault();
+		cate.val("reply");
+		$(".sidebar-list-item").removeClass("active");
+		$(".reply-li").addClass("active");
+		$(".app-content-headerText").html("댓글");
+		varlist(id,"reply",1);
+		console.log("reply a");
+	});
+		
+	
+	
+	/* Mypage main 에서 넘어올시 */
+	var maincate = '<c:out value="${category}" />';
+	if(maincate == "item") {
+		$(".item-li").addClass("active");
+	} else if(maincate == "board") {
+		$(".board-li").addClass("active");
+	} else if(maincate == "reply") {
+		$(".reply-li").addClass("active");
+	}
+	
+	/* header Text */
+	if(cate.val() == "item") {
+		$(".app-content-headerText").html("아이템");
+	} else if(cate.val() == "board") {
+		$(".app-content-headerText").html("게시글");
+	} else if(cate.val() == "reply") {
+		$(".app-content-headerText").html("댓글");
+	}
 	
 	/* 페이지분할 5개 
 	function varPage(varRecords) {
