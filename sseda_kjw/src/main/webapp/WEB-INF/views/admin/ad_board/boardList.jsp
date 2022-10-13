@@ -7,7 +7,7 @@
 <head>
 <%@ include file="../ad_main/m_menu.jsp" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="/js/board.js"></script>
+<script src="/source/js/ad_board.js"></script>
 </head>
 <body>
 <center>	

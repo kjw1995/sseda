@@ -12,9 +12,9 @@
 	<annotation-driven />
 
 	<!-- css, js, img -->
-	<resources mapping="/css/**" location="/ad_css/" />
-	<resources mapping="/img/**" location="/img/" />
-	<resources mapping="/js/**" location="/js/" />
+	<resources mapping="/ad_css/**" location="/source/ad_css/" />
+	<resources mapping="/img/**" location="/source/img/" />
+	<resources mapping="/ad_js/**" location="/source/js/" />
 
 	<!-- /WEB-INF/views/user/home.jsp -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

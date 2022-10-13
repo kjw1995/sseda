@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.javakjw.service.ReplyServiceImp;
 import com.sseda.dto.Cre;
 import com.sseda.dto.myListVO;
 import com.sseda.service.MyPageService;
