@@ -182,6 +182,11 @@ public class MypageController {
     	m.addAttribute("findid",ms.phoneid(name, email));
     	return "/member/idfiod"; 
     }
+    @PostMapping("pwchange")
+    public String pwchange(Member m) {
+    	ms.pwchange(m);
+    	return "/member/login";
+    }
     
 }
 

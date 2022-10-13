@@ -43,7 +43,7 @@
 	<form method="post" action="/mem/pwchange"  name="pwchange" onsubmit="return pwche()">
 		<input type="password" placeholder="비밀번호" name="pw" id="pwc"><br><br>
 		<input type="password" placeholder="비밀번호확인" name="pwcheck" id="pwca" required>
-		<input type="hidden" name="id" id="ids" value="">
+		<input type="hidden" name="id" id="ids" value="${sess_id }">
 		<br><br><input type="submit" value="변경">
 	</form>
 </div>
