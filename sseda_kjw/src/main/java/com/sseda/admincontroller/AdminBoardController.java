@@ -1,6 +1,7 @@
-	package com.sseda.admincontroller;
+package com.sseda.admincontroller;
 
 import java.util.List;
+
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+
 
 import com.sseda.dto.Board;
 import com.sseda.dto.Cre;
@@ -23,7 +24,6 @@ import com.sseda.dto.Page;
 import com.sseda.service.AdminBoardService;
 
 @Controller
-@RequestMapping(value="/admin/")
 public class AdminBoardController {
 private static final Logger log = LoggerFactory.getLogger(AdminBoardController.class);
 	@Autowired

@@ -17,7 +17,7 @@
     <span id="clock" style="color:gray; font-size: 30px;">clock</span>
     <span id="apm" style="color:gray; font-size: 15px;"  >ampm</span>
     </div>
-   <form name= "login" method = "post" action ="/admin/login">
+   <form name= "login" method = "post" action ="/admin/adminlogin">
     <div class="main">
         <h1 class="logo">SSEDA.</h1>
         <div class="container">
