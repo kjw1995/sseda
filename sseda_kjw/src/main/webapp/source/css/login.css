@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import "https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,700";
 
+
 /*--------------------
 General Style
 ---------------------*/
@@ -135,7 +136,7 @@ Login Box
 .box {
   width: 330px;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);

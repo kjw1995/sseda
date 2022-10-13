@@ -7,7 +7,7 @@
 
 
 	<div class="howto">
-	<h2>쓰다는 어떻게 이용하나요?</h2>
+	<h2 class="header-text">쓰다는 어떻게 이용하나요?</h2>
 	<section class="section--yellow wow fadeInDown" data-wow-duration="1s">
 		<img src="/img/one.png" class="fgone">
 		<img src="/img/light_on.gif" class="gif">

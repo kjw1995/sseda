@@ -11,7 +11,7 @@
 <script src="/js/loginjs.js"></script>
 <script src="/js/loginjs2.js"></script>
 <script src="/js/signup.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body onload="init()">
 <input type="hidden" name="loginmsg" value="<%= request.getAttribute("loginmsg") %>">
@@ -56,6 +56,11 @@
 <%@ include file = "../footer.jsp" %>
 </body>
 <script>
-$(".footer-distributed").css({"transform":"translate(-90%,-1150%)"});
+$(document).ready(function(){	
+$(".footer-distributed").css({"transform":"translate(-90%,-540%)"});
+$(".header-nav").css({"font-family":"none"});
+$(".search-toggle").css({"display":"none"});
+$(".header-nav").css({"font-family":"Nanum Myeongjo, serif"});
+});
 </script>
 </html>

@@ -112,11 +112,10 @@ $(".option").click(function(){
 	});
 $(document).ready(function(){
 	$(".header").css({"position":"absolute"});
-	$(".header").css("top","7%");
+	$(".header").css("top","-3%");
 	$(".header").css("width","886px");
 	$(".search-toggle").css("display","none");
 	$(".header-nav").css("padding-right","0em");
 });
-
 </script>
 </html>

@@ -6,7 +6,7 @@
 <script src="/js/menu.js"></script>
 <div>
 <header id="header-1" class="header">
-<a href="/" class="link-1"> <img src="/img/logo.png" class ="headicon"></a>
+<a href="/" class="link-1"><img src="/img/logo.png" class ="headicon"></a>
   <nav class="header-nav">
     <div class="search-button">
       <a href="#" class="search-toggle" data-selector="#header-1"></a>

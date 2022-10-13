@@ -7,16 +7,12 @@
 <meta charset="UTF-8">
 <title>쓰다메인</title>
 <%@ include file = "link.jsp" %>
+<script src="/js/text.js"></script>
+<script src="/js/mainjs.js"></script>
 </head>
 <body>
-
-
 <%@ include file = "menu.jsp" %>
-
 <%@ include file = "mainslide.jsp" %>
-
-<script src="/js/text.js"></script>
-
 <!--라이브보드 참고 -->
 <div id="manuicon">
 <h2 style= "display: inline-block;
