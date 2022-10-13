@@ -45,6 +45,7 @@ public class ItemServiceimp implements ItemService {
 	@Override
 	public String insert(Item item,MultipartFile file) {
 		Files fi = new Files();
+		System.out.println(file);
 		if(file.getSize() != 0) {
 			fi = f.fileupload(file);
 		}

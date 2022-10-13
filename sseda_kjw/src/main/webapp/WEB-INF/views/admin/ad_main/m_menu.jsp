@@ -14,7 +14,7 @@
 	</center>
 	<div id="menu">
 		<ul class="snip1217">
-		  <li class="current"><a href="/ad_main/m_main.jsp">메인</a></li>
+		  <li class="current"><a href="/admin/main">메인</a></li>
 		  <li><a href="/admin/memberList">회원 관리</a></li>
 		  <li><a href="/admin/boardList">게시물 * 댓글 관리</a></li>
 		  <li><a href="/admin/item/List">아이템 관리</a></li>

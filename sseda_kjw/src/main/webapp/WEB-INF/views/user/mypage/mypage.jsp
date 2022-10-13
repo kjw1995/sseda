@@ -59,7 +59,7 @@
          </div>
       </div>
    </div>
-   <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/f19901f50b79604839ca761cd6d74748/tumblr_o65rohhkQL1qho82wo1_1280.jpg);">
+   <div class="option" style="--optionBackground:url(../img/mymain_inter.png);">
       <div class="shadow"></div>
       <div class="label">
          <div class="icon">
@@ -70,7 +70,7 @@
          </div>
       </div>
    </div>
-   <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/f19901f50b79604839ca761cd6d74748/tumblr_o65rohhkQL1qho82wo1_1280.jpg);">
+   <div class="option" style="--optionBackground:url(../img/mymain_matching.png);">
       <div class="shadow"></div>
       <div class="label">
          <div class="icon">
@@ -81,7 +81,7 @@
          </div>
       </div>
    </div>
-   <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/f19901f50b79604839ca761cd6d74748/tumblr_o65rohhkQL1qho82wo1_1280.jpg);">
+   <div class="option" style="--optionBackground:url(../img/mymain_qna.png);">
       <div class="shadow"></div>
       <div class="label">
          <div class="icon">

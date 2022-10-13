@@ -10,6 +10,7 @@ public class Cre {
 	private String cate;
 	private String searchField;
 	private String searchText;
+	private SeachName searchname;
 	
 	public Cre() {
 		super();
@@ -73,6 +74,14 @@ public class Cre {
 	public void setSearchText(String searchText) {
 		this.searchText = searchText;
 	}
+	public SeachName getSearchname() {
+		return searchname;
+	}
+	public void setSearchname(SeachName searchname) {
+		this.searchname = searchname;
+	}
+	
+	
 	
 	
 	

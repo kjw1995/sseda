@@ -18,7 +18,7 @@ public class Member {
 	private int grade;
 	private String g;
 	private String amount;
-	
+	private List<String> agrade;
 	
 	public String getId() {
 		return id;
@@ -110,6 +110,12 @@ public class Member {
 	}
 	public void setEdomain(String edomain) {
 		this.edomain = edomain;
+	}
+	public List<String> getAgrade() {
+		return agrade;
+	}
+	public void setAgrade(List<String> agrade) {
+		this.agrade = agrade;
 	}
 	
 	

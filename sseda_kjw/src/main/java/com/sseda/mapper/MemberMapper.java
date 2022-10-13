@@ -2,6 +2,7 @@ package com.sseda.mapper;
 
 import com.sseda.dto.Member;
 
+
 public interface MemberMapper {
 	
 	public Member getById(String id);

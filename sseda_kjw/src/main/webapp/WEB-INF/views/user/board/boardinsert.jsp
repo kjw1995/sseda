@@ -14,7 +14,7 @@
 	<%@ include file = "../menu.jsp" %>
 	<br><br><br>
 	<div id="iteminsertm">
-		<form name="iteminsert" method="post" action="/board/insert" id="iteminsert">
+		<form name="iteminsert" method="post" action="/board/insert" id="iteminsert" enctype="multipart/form-data">
 			<input type="text" name="title" style="margin-left:8%;" placeholder="제목">
 			<input type="hidden" name="no" value="${no }">
 			<br>

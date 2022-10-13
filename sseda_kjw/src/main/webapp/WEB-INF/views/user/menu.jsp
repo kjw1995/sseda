@@ -14,7 +14,7 @@
     <ul class="menu">
       <c:set value="${sess_id}" var="id" />
   	  <c:set value="${sess_name}" var="name" />
-      <li><a href="#">메인</a></li>
+      <li><a href="/">메인</a></li>
       <li><a href="/qna/service">Q & A</a></li>
       <c:if test="${id == null}">
 	      <li><a href="/mem/gosignup">회원가입</a></li>

@@ -24,6 +24,11 @@ public class AdminController {
 	@Autowired
 	AdminService ad;
 	
+	@GetMapping("main")
+	public String adminmain() {
+		return "/ad_main/m_main";
+	}
+	
 	@GetMapping("gologin")
 	public String m_login() {
 		log.info("admin home...........");

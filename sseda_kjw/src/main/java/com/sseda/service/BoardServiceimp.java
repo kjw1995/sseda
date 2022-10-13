@@ -24,6 +24,7 @@ public class BoardServiceimp implements BoardService {
 	
 	public String insert(Board b,MultipartFile file) {
 		Files f = new Files();
+		System.out.println(file);
 		if(file.getSize() != 0) {
 			f = fs.fileupload(file);
 		}
