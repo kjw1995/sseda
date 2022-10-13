@@ -1,5 +1,6 @@
 package com.sseda.controller;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -16,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.sseda.dto.Files;
 import com.sseda.dto.Question;
+import com.sseda.service.FileService;
 import com.sseda.service.QnaService;
 
 @Controller
@@ -27,6 +30,8 @@ public class QnaController {
 	
 	@Autowired
 	QnaService q;
+	@Autowired
+	FileService f;
 	
 	@GetMapping("service")
 	public String service(Model m) {
@@ -64,6 +69,9 @@ public class QnaController {
 		String[] qn = q.detail(seqno);
 		return new ResponseEntity<>((qn[1]+"/"+qn[0]),HttpStatus.OK);
 	}
-	
+	@GetMapping("filedonw")
+	public void filedown(Files fi, HttpServletResponse res) {
+		f.filedown(fi, res);
+	}
 
 }

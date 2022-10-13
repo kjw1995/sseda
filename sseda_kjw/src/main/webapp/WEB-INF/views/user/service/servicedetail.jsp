@@ -19,6 +19,7 @@
 		<button id="button" onclick="answer()">답변등록</button>
 		<a class="title">김정우</a><br>
 		<a class="title">2022-08-01</a><br>
+		<a href="/qna/filedown?filename=${d.file.filename }&savefile=${d.file.savefile}&filepath=${d.file.filepath}">파일:${d.file.filename }</a><br>
 		<hr>
 		<a id="content">아이디를 잃어버렸는데 찾는방법을 알려주세요</a>
 		<form method="post" action="#" id="answer">

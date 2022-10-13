@@ -16,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -142,7 +143,6 @@ public class MypageController {
     	
     	return "/mypage/mypage_detail";
     }
-    
     @GetMapping("myitemdel")
     public String myitemdel(@RequestParam("itemdel") String[] seqno,
     					   HttpSession sess,
@@ -152,6 +152,35 @@ public class MypageController {
     	ms.myitemdel(seqno);
     	
     	return "redirect:/mem/userinfoitem";
+    }
+    @GetMapping("pwfindform")
+    public String pwfindform() {
+    	return "/member/pwfind";
+    }
+    
+    @PostMapping(value ="phonepw",produces = "text/plain; charset=UTF-8")
+    public ResponseEntity<String> phonepw(@RequestBody Member member){
+    	return new ResponseEntity<>(ms.phonepw(member.getName(), member.getPhonenumber()),HttpStatus.OK); 
+    }
+    @PostMapping(value ="emailpw",produces = "text/plain; charset=UTF-8")
+    public ResponseEntity<String> emailpw(@RequestBody Member member){
+    	return new ResponseEntity<>(ms.emailpw(member.getId(), member.getEmail()),HttpStatus.OK); 
+    }
+    @GetMapping("idfindform")
+    public String idfindform() {
+    	return "/member/pwfind";
+    }
+    
+    @PostMapping(value ="phoneid")
+    public String phoneid(@ModelAttribute Member member,Model m){
+    	m.addAttribute("findid",ms.phoneid(member.getName(), member.getPhonenumber()));
+    	return "/member/idfiod"; 
+    }
+    @PostMapping(value ="emailid")
+    public String emailid(@ModelAttribute("name")String name,@ModelAttribute("email")String mail,@ModelAttribute("em")String em,Model m ){
+    	String email = mail+"@"+em;
+    	m.addAttribute("findid",ms.phoneid(name, email));
+    	return "/member/idfiod"; 
     }
     
 }
