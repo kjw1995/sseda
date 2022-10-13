@@ -46,10 +46,10 @@
 					    <p><button onclick="closeLoginInfo();" class='b b-info i i-left' title='Back to Sign In'></button><h3>도움이 필요하신가요??</h3>
     </p>
 					    <div class='line-wh'></div>
-    					<button onclick="" class='b-support' title='Forgot Password?'> 비밀번호로찾기</button>
-    <button onclick="" class='b-support' title='Contact Support'> 이메일로찾기 </button>
-    					<div class='line-wh'></div>
     <button onclick="location.href='/mem/gosignup'" class='b-cta' title='Sign up now!'> SIGN UP</button>
+    					<button onclick="location.href='/mem/pwfindform'" class='b-support' title='Forgot Password?'> 비밀번호찾기</button>
+    					<div class='line-wh'></div>
+    <button onclick="location.href='/mem/idfindform'" class='b-support' title='Contact Support'> 아이디찾기 </button>
   				</div>
 </div>
 

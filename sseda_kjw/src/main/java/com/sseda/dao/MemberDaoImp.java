@@ -404,4 +404,98 @@ public class MemberDaoImp implements MemberDao {
 		
 		return result;
 	}
+	
+	public String phoneid(String name, String num) {
+		String id = "존재하지 않는 회원정보입니다.";
+		String sql ="SELECT * FROM member where phonenumber =?";
+		try {
+			Connection conn = dbconn.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, num);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				if(rs.getString("name").equals(name)) {
+					id = rs.getString("id");
+				}else {
+					id = "존재하지 않는 이름입니다.";
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return id;
+	}
+	public String emailid(String email, String name) {
+		String id = "존재하지 않는 회원정보입니다.";
+		String sql ="SELECT * FROM member where email =?";
+		try {
+			Connection conn = dbconn.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, email);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				if(rs.getString("name").equals(name)) {
+					id = rs.getString("id");
+				}else {
+					id = "존재하지 않는 이름입니다.";
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return id;
+	}
+	public String phonepw(String name, String phone) {
+		String pw = "1";
+		String sql ="SELECT * FROM member where phonenumber =?";
+		try {
+			Connection conn = dbconn.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, phone);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				if(rs.getString("name").equals(name)) {
+					pw = "3/"+rs.getString("id");
+				}else {
+					pw = "2";
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return pw;
+		
+	}
+	public String emailpw(String id, String em) {
+		String pw = "1";
+		String sql ="SELECT * FROM member where email =?";
+		try {
+			Connection conn = dbconn.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, em);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				if(rs.getString("name").equals(id)) {
+					pw = "3/"+rs.getString("id");
+				}else {
+					pw = "2";
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return pw;
+	}
+	public void pwchange(Member m) {
+		String sql = "UPDATE member SET pw = ? WHERE id = ?";
+		try {
+			Connection conn = dbconn.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, m.getPw());
+			stmt.setString(2, m.getId());
+			stmt.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

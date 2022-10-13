@@ -26,6 +26,7 @@
 		<a style="float:left">${b.name }</a><br>
 		<a style="float:left">${b.wdate }</a>
 		<a style="float:left">${b.count }</a><br>
+		<a style="float:left" href="/board/filedown?filename=${b.file.filename }&savefile=${d.file.savefile}&filepath=${d.file.filepath}">파일:${d.file.filename }</a><br>
 		<hr>
 		<a style="display:block;height:500px;">${b.content }</a>
 		<a style="float:left">좋아요:${b.like }</a><br>

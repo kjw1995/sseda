@@ -45,7 +45,7 @@
 		}
 		x.setRequestHeader("Content-type","application/x-www-form-urlencoded; charset=UTF-8");
 		if(no == 1){
-			x.send("name="+name+"&num="+num);
+			x.send("name="+name+"&phonenumber="+num);
 		}else{
 			x.send("name="+name+"&email="+email);
 		}

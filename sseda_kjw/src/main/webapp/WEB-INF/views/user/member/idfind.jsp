@@ -29,15 +29,14 @@
 		<h1>휴대전화로 아이디찾기</h1>
 		<form method="post" action="/mem/phoneid" onsubmit="return phonecheck()" name="phone">
 			<input type="text" name="name" placeholder="이름"><br>
-			<input type="text" name="phonenum" placeholder="휴대전화(-없이)"><br>
+			<input type="text" name="phonenumber" placeholder="휴대전화(-없이)"><br>
 			<input type="submit" value="등록">
 		</form>
 		<h1>이메일로 아이디찾기</h1>
 		<form method="post" action="/mem/emailid" onsubmit="return emailcheck()" name="memail">
 			<input type="text" name="name" placeholder="이름"><br>
 			<input type="text" name="email" placeholder="이메일" style="width:13%">@
-			<input type="text" name="em" id="did" style="width:13%">
-			<select id="semid" onchange="idem()">
+			<select id="semid" name="em">
 				<option value="">직접입력</option>
 				<option value="naver.com">naver.com</option>
 				<option value="daum.net">daum.net</option>
