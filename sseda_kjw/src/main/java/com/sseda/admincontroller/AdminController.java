@@ -1,8 +1,8 @@
 package com.sseda.admincontroller;
 
 
-import javax.servlet.http.HttpSession;
 
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sseda.dto.Member;
 import com.sseda.service.AdminService;
+
+
 
 @Controller
 public class AdminController {
@@ -28,7 +30,6 @@ public class AdminController {
 		return "/ad_main/m_login";
 	}
 
-	
 	
 	@PostMapping("adminlogin")
 	public String login(Member mem, HttpSession sess) {
@@ -51,4 +52,10 @@ public class AdminController {
 
 }	
 
+
+
+
+
+
+ 
 

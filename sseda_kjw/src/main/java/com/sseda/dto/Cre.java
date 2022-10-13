@@ -8,6 +8,8 @@ public class Cre {
 	private String division;
 	private String key;
 	private String cate;
+	private String searchField;
+	private String searchText;
 	
 	public Cre() {
 		super();
@@ -58,6 +60,18 @@ public class Cre {
 	}
 	public void setCate(String cate) {
 		this.cate = cate;
+	}
+	public String getSearchField() {
+		return searchField;
+	}
+	public void setSearchField(String searchField) {
+		this.searchField = searchField;
+	}
+	public String getSearchText() {
+		return searchText;
+	}
+	public void setSearchText(String searchText) {
+		this.searchText = searchText;
 	}
 	
 	
