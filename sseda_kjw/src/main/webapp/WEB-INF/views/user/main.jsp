@@ -55,12 +55,7 @@
 
 
 <%@ include file = "howto.jsp" %>
-
-
-<%@ include file = "liveboard2.jsp" %>
 	
-
-<%@ include file = "popular.jsp" %>
 
 <div id="mentor">
 <h2 class="mentorh2"> 작가로 활동하고 계신가요? <br>

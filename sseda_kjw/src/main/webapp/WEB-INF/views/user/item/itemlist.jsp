@@ -30,50 +30,34 @@
 </head>
 <body>
 <div id="wrap" style="margin-top: 50px;">
-	<%@ include file="../header.jsp" %>
 	<%@ include file="../menu.jsp" %>
 	<br>
 <center>
 	<form id="keyword" action="/item/list">
-		<select name="code">
-			<option value="A"
-			<c:if test="${page.c.code eq 'A'}">selected</c:if>>전체</option>
-			<option value="N"
-			<c:if test="${page.c.code eq 'N'}"> selected</c:if>>소설</option>
-			<option value="W"
-			<c:if test="${page.c.code eq 'W'}">selected</c:if>>웹소설</option>
-			<option value="E"
-			<c:if test="${page.c.code eq 'E'}">selected</c:if>>에세이</option>
-			<option value="P"
-			<c:if test="${page.c.code eq 'P'}">selected</c:if>>시</option>
-		</select>
-		<select name="meto_meti">
-			<option value="A"
-			<c:if test="${page.c.meto_meti eq 'A'}">selected</c:if>>전체</option>
-			<option value="O"
-			<c:if test="${page.c.meto_meti eq 'O' }">selected</c:if>>멘토</option>
-			<option value="I"
-			<c:if test="${page.c.meto_meti eq 'I' }">selected</c:if>>멘티</option>
-		</select>
-		<select name="division">
-			<option value="A"
-			<c:if test="${page.c.division eq 'A' }">selected</c:if>>전체</option>
-			<option value="t" 
-			<c:if test="${page.c.division eq 't' }">selected</c:if>>제목</option>
-			<option value="c"
-			<c:if test="${page.c.division eq 'c' }">selected</c:if>>내용</option>
-			<option value="n"
-			<c:if test="${page.c.division eq 'n' }">selected</c:if>>이름</option>
-		</select>
+	 	<div>
+		      <div>
+		      <div>
+		      	<input type="checkbox" id="fruit1" name="fruit-1" value="Apple">
+		      	<label for="fruit1">멘토</label>
+		      </div>
+		      <div>
+		      	<input type="checkbox" id="fruit4" name="fruit-4" value="Strawberry">
+		      	<label for="fruit4">멘티</label>
+		      </div>
+		      </div>
+		  </div>
+		<%@ include file="../item/drodown.jsp" %>
+		<div class="search__container">
 		<c:choose>
 			<c:when test="${page.c.division ne 'A' }">
-				<input type="text" name="key" value="${page.c.key }">
+				<input class="search__input" type="text" placeholder="Search" value="${page.c.key }">
 			</c:when>
 			<c:otherwise>
 				<input type="text" name="key">
 			</c:otherwise>	
 		</c:choose>
 			<input type="submit" value="검색">
+			</div>
 	</form>
 		<div class="container">
 		<c:if test="${sess_id != null }">
@@ -85,8 +69,9 @@
 	    	<a href="javascript:check('${id }',1)" class="button btnPush btnPurple" style="top: 36%; left: 93%">글등록</a>
 	  	</div>
   	<center>
-	<div id="list">
+  	
 	<c:forEach items="${item }" var="i" >
+	<!-- 
 		<table class="itemlist" border="1">
 			<tr><td colspan="2" style="height:150px;"onclick="location.href='/item/detail?no=${i.seqno}'"><div style="height:150px;">
 			<c:if test="${i.cfcheck == 'O' }"><img src="/img/멘토.jpg" style="height:100%;width:100%;"></c:if>
@@ -95,9 +80,68 @@
 			<tr><td>작성일자</td><td>${i.wdate }</td>
 			<tr><td>작성자</td><td>${i.name }</td>
 			<tr><td>조회수</td><td>${i.count }</td>
-		</table>
-	</c:forEach>
-	</div>
+		</table>-->
+ <div class="table">
+  <h2 class="heading">
+    ${i.title }
+  </h2>
+  <div class="block">
+  <p class="itemp">${i.name }
+    <span class="price">$28/
+      <sub>hour</sub>
+    </span>   
+    <ul class="options">
+    <li class="fa-solid fa-user">nickname</li>
+    </ul>
+ </p>
+</div>
+
+<div class="block">
+<p class="itemp">250 point
+    <span class="price">$29/
+      <sub>hour</sub>
+    </span>   
+    <ul class="options">
+      <li>point</li>
+    </ul>
+ </p>
+</div>
+
+
+<div class="block">
+<p class="itemp">${i.wdate }
+    <span class="price">$29/
+      <sub>hour</sub>
+    </span>   
+    <ul class="options">
+      <li>date</li>
+    </ul>
+ </p>
+</div>
+
+<div class="block">
+<p>${i.count }
+    <span class="price">$29/
+      <sub>hour</sub>
+    </span>   
+    <ul class="options">
+      <li>count</li>
+    </ul>
+ </p>
+</div>
+<div id="container">
+  <button class="learn-more">
+    <span class="circle" aria-hidden="true">
+      <span class="icon arrow"></span>
+    </span>
+    <span class="button-text"> Matching</span>
+  </button>
+</div>
+</div>
+</c:forEach>
+
+		
+	
 	<center>
 	<p>전체레코드 ${page.t }</p>	
 		<div class="pagination">

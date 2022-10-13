@@ -67,7 +67,7 @@ section {
 	position: absolute;
 	top: 280%;
     left: 50%;
-    transform: translate(-50%, 360%);
+    transform: translate(-50%, 50%)
 }
 
 
@@ -357,7 +357,6 @@ a.button {
 #login{
 	width: 40%;
 	padding: 20px;
-	padding-bottom: 20px;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	resize: vertical;
