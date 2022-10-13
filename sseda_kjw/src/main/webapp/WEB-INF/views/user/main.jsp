@@ -78,8 +78,10 @@
 </button>
 
 <%@ include file = "slide.jsp" %>
-</div>
 <%@ include file = "footer.jsp" %>
-
+</div>
+<script>
+$(".footer-distributed").css({"transform":"translate(-90%,-650%)"});
+</script>
 </body>
 </html>

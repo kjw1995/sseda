@@ -29,6 +29,7 @@ public class AdminController {
 	}
 
 	
+	
 	@PostMapping("adminlogin")
 	public String login(Member mem, HttpSession sess) {
 		log.info("admin login................");
