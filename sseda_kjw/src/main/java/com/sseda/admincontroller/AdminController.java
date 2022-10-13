@@ -23,33 +23,12 @@ import com.sseda.service.AdminService;
 @RequestMapping("/admin")
 public class AdminController {
 	
-	@Autowired
-	AdminService ad;
-	
 	private static final Logger log = org.slf4j.LoggerFactory.getLogger(AdminController.class);
 	
 	@GetMapping("/")
 	public String m_login() {
 		log.info("admin home...........");
 		return "/ad_main/m_login";
-	}
-	@PostMapping(value="/login")
-	public String login(Member mem, HttpSession sess) {
-		log.info("admin login................");
-		String map = ad.login(mem.getId(), mem.getPw());
-		
-		String url = null;
-		
-		if(map.equals("0")){
-			url = "/ad_main/m_main";
-			
-		} else if(map.equals("1")) {
-			url = "/ad_main/m_login";
-		} else {
-			url = "/ad_main/m_login";
-		}
-		
-		return url;
 	}
 }	
 
