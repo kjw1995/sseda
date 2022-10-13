@@ -16,6 +16,7 @@ public class Board {
 	private String like_seqno;
 	private String num;
 	private String keyword;
+	private Files file;
 	
 	
 	public List<Reply> getR() {
@@ -95,6 +96,12 @@ public class Board {
 	}
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
+	}
+	public Files getFile() {
+		return file;
+	}
+	public void setFile(Files file) {
+		this.file = file;
 	}
 	
 	

@@ -39,5 +39,13 @@ public interface MemberService {
 
 	public int myitemtotal(String id);
 	
+	public String phoneid(String name, String num);
 	
+	public String emailid(String email, String name);
+	
+	public String phonepw(String name, String phone);
+	
+	public String emailpw(String id, String em);
+	
+	public void pwchange(Member m);
 }

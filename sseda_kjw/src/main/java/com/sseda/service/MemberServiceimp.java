@@ -102,6 +102,31 @@ public class MemberServiceimp implements MemberService {
 		
 		return dao.myitemtotal(id);
 	}
+
+	@Override
+	public String phoneid(String name, String num) {
+		return dao.phoneid(name, num);
+	}
+
+	@Override
+	public String emailid(String email, String name) {
+		return dao.emailid(email, name);
+	}
+
+	@Override
+	public String phonepw(String name, String phone) {
+		return dao.emailpw(name, phone);
+	}
+
+	@Override
+	public String emailpw(String id, String em) {
+		return dao.emailpw(id, em);
+	}
+
+	@Override
+	public void pwchange(Member m) {
+		dao.pwchange(m);
+	}
 	
 	
 	

@@ -25,9 +25,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sseda.dto.Board;
 import com.sseda.dto.Cre;
+import com.sseda.dto.Files;
 import com.sseda.dto.Page;
 import com.sseda.service.BoardService;
 import com.sseda.service.BoardServiceimp;
+import com.sseda.service.FileService;
 import com.sseda.service.ReplyService;
 
 @Controller
@@ -36,7 +38,8 @@ public class BoardController extends HttpServlet {
 	
 	@Autowired
 	BoardService b;
-	
+	@Autowired
+	FileService f;
 	
 	@GetMapping("list")
 	public String boardlist(Cre c,Model m) {
@@ -83,6 +86,10 @@ public class BoardController extends HttpServlet {
 		b.report(no);
 		rd.addFlashAttribute("no",no);
 		return "redirect:/board/detail";
+	}
+	@GetMapping("filedown")
+	public void filedonw (Files fi,HttpServletResponse res) {
+		f.filedown(fi, res);
 	}
 
 }

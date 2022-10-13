@@ -82,7 +82,13 @@ public class BoardDaoimp implements BoardDao {
 			}else {
 				b.setLike_seqno("no");
 			}
-			
+			Files f = new Files();
+			if(rs.getString("f_seqno") != null) {
+				f.setFilename(rs.getString("upfile"));
+				f.setFilepath(rs.getString("filepath"));
+				f.setSavefile(rs.getString("savefile"));
+			}
+			b.setFile(f);
 			conn.close();
 			stmt.close();
 		} catch (SQLException e) {
