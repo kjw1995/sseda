@@ -17,16 +17,17 @@ import com.sseda.service.AdminService;
 @Controller
 public class AdminController {
 	
+	private static final Logger log = org.slf4j.LoggerFactory.getLogger(AdminController.class);
+	
 	@Autowired
 	AdminService ad;
-	
-	private static final Logger log = org.slf4j.LoggerFactory.getLogger(AdminController.class);
 	
 	@GetMapping("gologin")
 	public String m_login() {
 		log.info("admin home...........");
 		return "/ad_main/m_login";
 	}
+
 	
 	@PostMapping("adminlogin")
 	public String login(Member mem, HttpSession sess) {
@@ -46,6 +47,7 @@ public class AdminController {
 		
 		return url;
 	}
+
 }	
 
 
