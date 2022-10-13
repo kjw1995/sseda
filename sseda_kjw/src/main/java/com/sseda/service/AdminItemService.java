@@ -7,9 +7,9 @@ import com.sseda.dto.Item;
 
 public interface AdminItemService {
 
-	public List<Item> list(Cre cri);
+	public List<Item> list(Cre c);
 	
-	public int getTotalRec(Cre cri);
+	public int getTotalRec(Cre c);
 	
 	public int delete(String ino);
 }

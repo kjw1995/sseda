@@ -58,5 +58,10 @@ public class ItemServiceimp implements ItemService {
 	public int getT(Cre c) {
 		return dao.getT(c);
 	}
+	@Override
+	public int myitemdel(String[] obj) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 }
